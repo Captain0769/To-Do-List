@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My To-Do List</h1>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search tasks..." 
+                    aria-label="Search tasks"
+                >
+                <button id="search-btn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <form id="todo-form" class="todo-form">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="todo-input" 
+                        placeholder="Add a new task..." 
+                        aria-label="New task input"
+                        required
+                    >
+                    <input 
+                        type="date" 
+                        id="due-date" 
+                        aria-label="Due date"
+                    >
+                    <select id="priority" aria-label="Priority level">
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                        <option value="low">Low Priority</option>
+                    </select>
+                    <select id="category" aria-label="Task category">
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="health">Health</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="notes-group">
+                    <textarea 
+                        id="task-notes" 
+                        placeholder="Add notes or description..." 
+                        aria-label="Task notes"
+                    ></textarea>
+                </div>
+                <button type="submit" aria-label="Add task">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </form>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="overdue">Overdue</button>
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="all">All Categories</button>
+                    <button class="category-btn" data-category="personal">Personal</button>
+                    <button class="category-btn" data-category="work">Work</button>
+                    <button class="category-btn" data-category="shopping">Shopping</button>
+                    <button class="category-btn" data-category="health">Health</button>
+                    <button class="category-btn" data-category="other">Other</button>
+                </div>
+            </div>
+
+            <ul id="todo-list" class="todo-list" role="list">
+                <!-- Tasks will be dynamically added here -->
+            </ul>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
